@@ -21,10 +21,14 @@ export const ListItem = styled.li`
   display: flex;
   align-items: center;
   background-color: #f1f1f1;
-  /* border-bottom: 1px solid #d5d5d5; */
   padding: 0.5rem;
   border: 1px solid #1d1e21;
   margin-bottom: 5px;
+  transition: 0.2s ease;
+
+  &:hover {
+    scale: calc(101%);
+  }
 `;
 
 export const Info = styled.div`
