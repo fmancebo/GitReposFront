@@ -26,6 +26,7 @@ module.exports = {
   },
   plugins: ["react", "react-hooks", "testing-library", "prettier", "jsx-a11y"],
   rules: {
+    "no-underscore-dangle": "off",
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": [
       "warn",

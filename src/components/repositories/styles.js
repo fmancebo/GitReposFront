@@ -1,0 +1,56 @@
+import styled from "styled-components";
+
+export const RepositoriesContainer = styled.div`
+  max-width: 480px;
+  margin: 1rem auto;
+`;
+
+export const Title = styled.h2`
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 1rem;
+`;
+
+export const List = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+export const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  /* border-bottom: 1px solid #d5d5d5; */
+  padding: 0.5rem;
+  border: 1px solid #1d1e21;
+  margin-bottom: 5px;
+`;
+
+export const Info = styled.div`
+  flex: 1;
+`;
+
+export const Owner = styled.div`
+  font-weight: bold;
+  font-size: 1.3rem;
+`;
+
+export const Name = styled.div`
+  font-size: 1.3rem;
+  color: #555;
+`;
+
+export const DeleteButton = styled.button`
+  padding: 0.3rem 0.7rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #d32f2f;
+  }
+`;
