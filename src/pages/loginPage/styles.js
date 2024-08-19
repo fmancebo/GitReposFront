@@ -6,7 +6,7 @@ export const LoginContainer = styled.div`
   background-color: #1d1e21;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0 2rem;
 
   .link {
