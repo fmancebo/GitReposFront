@@ -28,7 +28,7 @@ function LoginPage() {
 
   return (
     <LoginContainer>
-      <img src='/logo512.png' alt='GitHub Logo' style={{ width: "30%", height: "auto" }} />
+      <img src='/logo512.png' alt='GitHub Logo' style={{ width: "25%", height: "auto" }} />
       <h1 className='title'>Login</h1>
       <LoginForm>
         <div className='field'>
