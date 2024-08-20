@@ -9,6 +9,11 @@ export const LoginContainer = styled.div`
   height: 100vh;
   padding: 0 2rem;
 
+  .gitImg {
+    width: 25%;
+    height: auto;
+  }
+
   .link {
     display: block;
     text-align: center;
@@ -23,6 +28,13 @@ export const LoginContainer = styled.div`
 
   .title {
     color: white;
+  }
+
+  @media screen and (max-width: 600px) {
+    .gitImg {
+      width: 50%;
+      height: auto;
+    }
   }
 `;
 

@@ -46,7 +46,7 @@ function CreateUserPage() {
 
   return (
     <CreateUserContainer>
-      <img src='/logo512.png' alt='GitHub Logo' style={{ width: "25%", height: "auto" }} />
+      <img className='gitImg' src='/logo512.png' alt='GitHub Logo' />
       <h1 className='title'>Criar Usuário</h1>
       <CreateUserForm>
         <form onSubmit={handleSubmit}>

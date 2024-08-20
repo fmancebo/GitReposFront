@@ -9,6 +9,11 @@ export const CreateUserContainer = styled.div`
   min-height: 100vh;
   padding: 0 2rem;
 
+  .gitImg {
+    width: 25%;
+    height: auto;
+  }
+
   .error {
     color: red;
     background-color: #fdd;
@@ -29,6 +34,13 @@ export const CreateUserContainer = styled.div`
 
   .title {
     color: white;
+  }
+
+  @media screen and (max-width: 600px) {
+    .gitImg {
+      width: 50%;
+      height: auto;
+    }
   }
 `;
 
