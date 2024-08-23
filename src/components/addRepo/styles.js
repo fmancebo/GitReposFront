@@ -46,3 +46,25 @@ export const ErrorMessage = styled.div`
   text-align: center;
   font-size: 14px;
 `;
+
+export const LoadingComponents = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+`;
+
+export const SpinnerComponents = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid rgba(51, 51, 51, 0.2);
+  border-top-color: #09d;
+  animation: spin 0.8s ease-in-out infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;

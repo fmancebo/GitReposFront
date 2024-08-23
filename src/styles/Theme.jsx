@@ -63,7 +63,7 @@ export const theme = {
     link: "#3498db",
   },
 
-  fonts: ["Open Sans", "Arial", "Helvetica", "sans-serif"].join(","),
+  fonts: ["Poppins", "Open Sans", "Arial", "Helvetica", "sans-serif"].join(","),
 
   fontFamily: {
     heading: ["IBM Plex Sans", "sans-serif"].join(","),

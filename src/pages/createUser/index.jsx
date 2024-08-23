@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-  CreateUserContainer,
-  CreateUserForm,
-  FieldLabel,
-  FieldInput,
-  Actions,
-  ButtonSubmit,
+  BodyLogin,
+  Container,
+  BoxLogin,
+  RegisterHeader,
+  InputBox,
+  InputField,
+  Label,
+  BtnRegister,
+  LoadingComponents,
+  SpinnerComponents,
 } from "./styles";
 
 import { createUser } from "../../services/api";
@@ -19,9 +23,12 @@ function CreateUserPage() {
   const [error, setError] = useState(""); // Mensagem de erro
   const [success, setSuccess] = useState(""); // Mensagem de sucesso
   const navigate = useNavigate(); // Hook para redirecionamento
+  const [loading, setLoading] = useState(false); // Estado para controlar o carregamento
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setLoading(true); // Começa o carregamento
 
     try {
       await createUser(fullName, email, password);
@@ -41,56 +48,76 @@ function CreateUserPage() {
 
       setError(errorMessage);
       // console.error(err.message);
+    } finally {
+      setLoading(false); // Finaliza o carregamento
     }
   };
 
   return (
-    <CreateUserContainer>
-      <img className='gitImg' src='/logo512.png' alt='GitHub Logo' />
-      <h1 className='title'>Criar Usuário</h1>
-      <CreateUserForm>
+    <BodyLogin>
+      <Container>
         <form onSubmit={handleSubmit}>
-          <div className='field'>
-            <FieldLabel htmlFor='fullName'>Nome Completo:</FieldLabel>
-            <FieldInput
-              type='text'
-              name='fullName'
-              id='fullName'
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              required
-            />
-          </div>
-          <div className='field'>
-            <FieldLabel htmlFor='email'>Email:</FieldLabel>
-            <FieldInput
-              type='email'
-              name='email'
-              id='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className='field'>
-            <FieldLabel htmlFor='password'>Senha:</FieldLabel>
-            <FieldInput
-              type='password'
-              name='password'
-              id='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          {error && <p className='error'>{error}</p>}
-          {success && <p className='success'>{success}</p>}
-          <Actions>
-            <ButtonSubmit type='submit'>Registrar</ButtonSubmit>
-          </Actions>
+          <BoxLogin>
+            <RegisterHeader>
+              <span>Cadastro</span>
+            </RegisterHeader>
+            <InputBox>
+              <InputField
+                type='text'
+                id='fullName'
+                name='fullName'
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+              />
+              <Label className='label' htmlFor='fullName'>
+                Nome e sobrenome
+              </Label>
+              <i className='fa-regular fa-user' />
+            </InputBox>
+            <InputBox>
+              <InputField
+                type='email'
+                id='email'
+                name='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <Label className='label' htmlFor='email'>
+                Email
+              </Label>
+              <i className='fa-regular fa-envelope' />
+            </InputBox>
+            <InputBox>
+              <InputField
+                type='password'
+                id='password'
+                name='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <Label className='label' htmlFor='password'>
+                Password
+              </Label>
+              <i className='fa-solid fa-lock' />
+            </InputBox>
+            {loading ? (
+              <LoadingComponents>
+                <SpinnerComponents />
+              </LoadingComponents>
+            ) : (
+              <BtnRegister type='submit'>Registrar</BtnRegister>
+            )}
+            <div>
+              {error && <p className='error'>{error}</p>}
+              {success && <p className='success'>{success}</p>}
+            </div>
+          </BoxLogin>
         </form>
-      </CreateUserForm>
-    </CreateUserContainer>
+      </Container>
+    </BodyLogin>
   );
 }
 

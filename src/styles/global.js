@@ -13,6 +13,12 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --primary-color: #c6c3c3;
+  --second-color: #ffffff;
+  --black-color: #000000;
+}
+
 body,
 h1,
 h2,
@@ -25,7 +31,7 @@ ol,
 ul,
 input,
 textarea {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,9 +41,13 @@ textarea {
 }
 
 
-a{
-    color: inherit;
+a {
     text-decoration: none;
+    color: var(--second-color);
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
 ol,

@@ -14,6 +14,7 @@ export default function MainPage() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState({}); // Estado para controlar o loading de cada repositório
   const userId = user?.id; // ID do usuário do AuthContext
 
   // Função para carregar os repositórios
@@ -69,12 +70,15 @@ export default function MainPage() {
 
   // Função para deletar repositório
   const handleDeleteRepo = async (repository) => {
+    setDeleteLoading((prev) => ({ ...prev, [repository._id]: true })); // Define o loading para o repositório específico
     try {
       await destroyRepository(userId, repository._id, user.password); // Passe a senha do usuário
       loadData();
     } catch (err) {
       // console.error(err);
       setLoadingError(true);
+    } finally {
+      setDeleteLoading((prev) => ({ ...prev, [repository._id]: false })); // Desativa o loading
     }
   };
 
@@ -103,7 +107,11 @@ export default function MainPage() {
     <>
       <NavBar logout={handleLogout} />
       <Search query={query} onSearch={handleSearch} onClear={handleClearSearch} />
-      <Repository repositories={repositories} onDeleteRepo={handleDeleteRepo} />
+      <Repository
+        repositories={repositories}
+        onDeleteRepo={handleDeleteRepo}
+        deleteLoading={deleteLoading}
+      />
       <AddRepo onAddRepo={handleAddRepo} />
     </>
   );

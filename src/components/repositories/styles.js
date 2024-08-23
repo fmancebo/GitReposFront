@@ -58,3 +58,25 @@ export const DeleteButton = styled.button`
     background-color: #d32f2f;
   }
 `;
+
+export const LoadingComponents = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+`;
+
+export const SpinnerComponents = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid rgba(51, 51, 51, 0.2);
+  border-top-color: #d32f2f;
+  animation: spin 0.8s ease-in-out infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;

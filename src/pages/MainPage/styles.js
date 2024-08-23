@@ -32,3 +32,27 @@ export const Spinner = styled.div`
     }
   }
 `;
+
+export const LoadingComponents = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  padding: 0 2rem;
+`;
+
+export const SpinnerComponents = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 20px solid #333;
+  border-top-color: #09d;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
