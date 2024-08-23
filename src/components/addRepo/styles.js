@@ -6,9 +6,9 @@ export const AddRepoContainer = styled.div`
   max-width: 480px;
   margin: 1rem auto;
   padding: 1rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  background-color: #e0e0e033;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 10px 2px #000000;
 `;
 
 export const Label = styled.label`

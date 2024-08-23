@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/auth";
-import { Loading, Spinner } from "./styles";
+import { Loading, Spinner, BodyMainPage, Container } from "./styles";
 import NavBar from "../../components/navBar";
 import Search from "../../components/search";
 import Repository from "../../components/repositories";
@@ -104,15 +104,17 @@ export default function MainPage() {
   }
 
   return (
-    <>
-      <NavBar logout={handleLogout} />
-      <Search query={query} onSearch={handleSearch} onClear={handleClearSearch} />
-      <Repository
-        repositories={repositories}
-        onDeleteRepo={handleDeleteRepo}
-        deleteLoading={deleteLoading}
-      />
-      <AddRepo onAddRepo={handleAddRepo} />
-    </>
+    <BodyMainPage>
+      <Container>
+        <NavBar logout={handleLogout} />
+        <Search query={query} onSearch={handleSearch} onClear={handleClearSearch} />
+        <Repository
+          repositories={repositories}
+          onDeleteRepo={handleDeleteRepo}
+          deleteLoading={deleteLoading}
+        />
+        <AddRepo onAddRepo={handleAddRepo} />
+      </Container>
+    </BodyMainPage>
   );
 }

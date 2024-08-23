@@ -20,11 +20,13 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   align-items: center;
-  background-color: #f1f1f1;
+  background-color: #e0e0e033;
+  backdrop-filter: blur(20px);
   padding: 0.5rem;
   border: 1px solid #1d1e21;
   margin-bottom: 5px;
   transition: 0.2s ease;
+  box-shadow: 0px 0px 10px 2px #000000;
 
   &:hover {
     scale: calc(101%);
@@ -36,13 +38,14 @@ export const Info = styled.div`
 `;
 
 export const Owner = styled.div`
+  color: black;
   font-weight: bold;
   font-size: 1.3rem;
 `;
 
 export const Name = styled.div`
   font-size: 1.3rem;
-  color: #555;
+  color: white;
 `;
 
 export const DeleteButton = styled.button`
